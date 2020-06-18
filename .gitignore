@@ -3,6 +3,7 @@
 *\.json
 *\.ipynb_checkpoints\*
 *\debug.log\*
+images
 
 profile_default/
 ipython_config.py
