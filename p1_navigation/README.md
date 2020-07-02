@@ -20,7 +20,7 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 ### Getting Started
 
-The environment is based on [Unity ML-agents](https://github.com/Unity-Technologies/ml-agents)
+The environment is based on [Unity ML-agents](https://github.com/Unity-Technologies/ml-agents).
 
 #### 1: Clone the DRLND Repository
 1.  Clone [the DRLND GitHub repository](https://github.com/udacity/deep-reinforcement-learning#dependencies) from Udacity.
