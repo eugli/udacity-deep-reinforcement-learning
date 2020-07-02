@@ -4,7 +4,7 @@
 
 ### Introduction
 
-For this project, I trained an agent to navigate and collect bananas in the [Banana Collector](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#banana-collector) environment.
+For this project, I trained an agent to navigate and collect bananas in the Unity [Banana Collector](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#banana-collector) environment.
 
 ![Trained Agent][image1]
 
