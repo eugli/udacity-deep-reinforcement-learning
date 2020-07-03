@@ -5,7 +5,7 @@
 
 [image1]: https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif "Trained Agent"
 
-For this project, I trained an agent to control an arm to target locations in the Unity [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment.
+For this project, I trained an agent to control an arm to move to a target location in the Unity [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment.
 
 ![Trained Agent][image1]
 
@@ -13,7 +13,7 @@ In this environment, a double-jointed arm can move to target locations. A reward
 
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 
-The task is episodic, and in order to solve the environment,  your agent must get an average score of +30 over 100 consecutive episodes.
+The task is episodic, and in order to solve the environment,  your agent must get an average score of +30.0 over 100 consecutive episodes.
 
 ### Getting Started
 The environment is based on [Unity ML-agents](https://github.com/Unity-Technologies/ml-agents).
