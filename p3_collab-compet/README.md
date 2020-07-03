@@ -11,11 +11,16 @@ For this project, I trained a multi-agent system to play tennis with itself in t
 
 ![Trained Agent][image1]
 
-In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
+In this environment, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
 
-The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation. Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
 
-The task is episodic, and in order to solve the environment,  your agent must get an average score of +30.0 over 100 consecutive episodes.
+The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
+
+-   After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
+-   This yields a single  **score**  for each episode.
+
+The environment is considered solved, when the average (over 100 episodes) of those  **scores**  is at least +0.5.
 
 ### Getting Started
 The environment is based on [Unity ML-agents](https://github.com/Unity-Technologies/ml-agents).
@@ -37,6 +42,7 @@ The environment is based on [Unity ML-agents](https://github.com/Unity-Technolog
     
 2. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file. 
     
+
 ### Explanation
 My solution for this environment uses the actor-critic DDPG algorithm with fixed targets (for both actor and critic), soft updates, experienced replay, and added Ornstein–Uhlenbeck noise. The agent is created with four internal networks: a Q network, a deterministic policy network, a target Q network, and a target policy network.
 
@@ -46,4 +52,4 @@ The policy network and target policy network also have identical architectures: 
 
 The agent uses a discount rate of 0.99.
 
-The agent is trained in a training loop for either 500 episodes (with a max of 10000 timesteps each) or when it reaches an average reward over 100 episodes of 30.0 or greater.
+The agent is trained in a training loop for either 500 episodes (with a max of 10000 timesteps each) or when it reaches an average reward over 100 episodes of +0.5 or greater.

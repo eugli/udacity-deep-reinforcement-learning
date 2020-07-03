@@ -13,7 +13,7 @@ The algorithm used for this environment is  [DDPG](https://arxiv.org/pdf/1509.02
 |Tau|0.001|
 |Buffer Size|100000|
 |Batch Size|128|
-|Goal|30.0|
+|Goal|0.5|
 
 #### Model Architecture
 
@@ -39,7 +39,7 @@ A convolutional net is not used as the agent does not learn directly from the pi
 
 ## Performance
 
-The agent solved the environment (by reaching an average reward of 30.0 over 100 episodes) in  **???**  episodes, before the 500 episode limit.
+The agent solved the environment (by reaching an average reward of 0.5 over 100 episodes) in  **???**  episodes, before the 500 episode limit.
 
 ### Reward vs. Episode
 
@@ -48,6 +48,6 @@ The agent solved the environment (by reaching an average reward of 30.0 over 100
 ## Improvements
 - Using prioritized experience replay
 - Adding more fully-connected layers / more hidden units to the layers
-- Training past the target average reward of 30.0 and seeing what the limit is
+- Training past the target average reward of 0.5 and seeing what the limit is
 - Optimize hyperparameters (particularly the actor and critic learning rates) using grid search
 - Limit how many times the model is updated each timestep to avoid too much noise
