@@ -35,7 +35,7 @@ A convolutional net is not used as the agent does not learn directly from the pi
 
 ## Performance
 
-The agent solved the environment (by reaching an average reward of 30.0 over 100 episodes) in  **25**  episodes, before the 1000 episode limit.
+The agents solved the environment (by reaching a collective average reward of 30.0 over 100 episodes) in  **25**  episodes, before the 1000 episode limit.
 
 ### Reward vs. Episode
 
@@ -43,6 +43,7 @@ The agent solved the environment (by reaching an average reward of 30.0 over 100
 
 ## Improvements
 - Using prioritized experience replay
+- Use algorithms that are designed for multiple copies of the same agent (like PPO, A3C, and D4PG)
 - Adding batch normalization layers
 - Testing different activation functions (like Leaky ReLU)
 - Adding more fully-connected layers / more hidden units to the layers
