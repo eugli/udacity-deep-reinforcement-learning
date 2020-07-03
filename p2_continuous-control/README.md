@@ -4,7 +4,7 @@
 
 [image1]: https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif "Trained Agent"
 
-For this project, I trained a set of 20 agents to each control an arm to move to a target location in the Unity [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment.
+For this project, I trained a multi-agent system of 20 agents to each control an arm to move to a target location in the Unity [Reacher](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher) environment.
 
 ![Trained Agent][image1]
 
@@ -49,7 +49,7 @@ The environment is based on [Unity ML-agents](https://github.com/Unity-Technolog
 3. Place the file in the DRLND GitHub repository, in the `p2_continuous-control/` folder, and unzip (or decompress) the file. 
 
 ### Explanation
-My solution for this environment uses the actor-critic DDPG algorithm with fixed targets (for both actor and critic), soft updates, experienced replay, and added Ornstein–Uhlenbeck noise. The agents are each created with four internal networks: a Q network, a deterministic policy network, a target Q network, and a target policy network.
+My solution for this environment uses the actor-critic MADDPG algorithm with fixed targets (for both actor and critic), soft updates, experienced replay, and added Ornstein–Uhlenbeck noise. The 20 agents are each created with four internal networks: a Q network, a deterministic policy network, a target Q network, and a target policy network.
 
 The Q network and the target Q network have identical architectures: 3 fully-connected layers joined by ReLU activation functions. The final output is entered into a tanh activation function.
 

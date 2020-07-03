@@ -3,13 +3,13 @@
 
 ## Algorithm
 
-The algorithm used for this environment is  [DDPG](https://arxiv.org/pdf/1509.02971.pdf). This implementation also employs fixed targets (with soft updates) and experienced replay that helps the agent generalize and train with reduced noise. To encourage exploration, the [Ornstein -Uhlenbeck process](https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process) is used to add a little bit of noise to the actions. 
+The algorithm used for this environment is [MADDPG](https://arxiv.org/pdf/1706.02275.pdf). This implementation also employs fixed targets (with soft updates) and experienced replay that helps the agent generalize and train with reduced noise. To encourage exploration, the [Ornstein -Uhlenbeck process](https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process) is used to add a little bit of noise to the actions. 
 
 |Name|Value|
 |---|---:|
 |Episodes|1000|
-|Actor Learning Rate|0.0001|
-|Critic Learning Rate|0.0001|
+|Actor Learning Rate|0.001|
+|Critic Learning Rate|0.001|
 |Weight Decay|0|
 |Gamma|0.99|
 |Tau|0.001|
@@ -43,7 +43,7 @@ The agents solved the environment (by reaching a collective average reward of 30
 
 ## Improvements
 - Using prioritized experience replay
-- Use algorithms that are designed for multiple copies of the same agent (like PPO, A3C, and D4PG)
+- Use other algorithms that are designed for multiple copies of the same agent (like PPO, A3C, and D4PG)
 - Adding batch normalization layers
 - Testing different activation functions (like Leaky ReLU)
 - Adding more fully-connected layers / more hidden units to the layers
