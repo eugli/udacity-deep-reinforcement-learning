@@ -3,6 +3,7 @@
 
 ## Algorithm
 
+
 The algorithm used for this environment is [Deep Q-Learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). This implementation also employs fixed q-targets (through soft updates) and experienced replay that helps the agent generalize and train with reduced noise.
 
 #### Hyperparameters
