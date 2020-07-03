@@ -4,7 +4,7 @@
 
 ### Introduction
 
-For this project, I trained an agent to navigate (and collect bananas!) in a large, square world.  
+For this project, I trained an agent to navigate and collect bananas in the Unity [Banana Collector](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#banana-collector) environment.
 
 ![Trained Agent][image1]
 
@@ -16,7 +16,7 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 - **`2`** - turn left.
 - **`3`** - turn right.
 
-The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
+The task is episodic, and in order to solve the environment, your agent must get an average score of +13.0 over 100 consecutive episodes.
 
 ### Getting Started
 
@@ -43,4 +43,4 @@ The environment is based on [Unity ML-agents](https://github.com/Unity-Technolog
 ### Explanation
 My solution for this environment is a standard DQN with fixed q-targets and experienced replay. The agent is created with an internal q-network of 3 fully-connected layers, joined by ReLU activation functions. The agent also satisfies GLIE conditions and uses a discount rate of 0.995.
 
-The agent is trained in a training loop for either 2000 episodes (with a max of 500 timesteps) or when it reaches an average reward of 13.0 or greater.
+The agent is trained in a training loop for either 2000 episodes (with a max of 500 timesteps each) or when it reaches an average reward over 100 episodes of 13.0 or greater.
