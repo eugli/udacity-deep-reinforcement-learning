@@ -18,7 +18,7 @@ The algorithm used for this environment is [Deep Q-Learning](https://storage.goo
 |Tau|0.001|
 |Buffer Size|100000|
 |Batch Size|64|
-|Target|13.0|
+|Goal|13.0|
 
 #### Model Architecture
 
