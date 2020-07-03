@@ -18,19 +18,15 @@ The algorithm used for this environment is [MADDPG](https://arxiv.org/pdf/1706.0
 
 #### Model Architecture
 
-The actor (and the actor target) network uses 3 fully-connected layers and 3 batch normalization layers:
+The actor (and the actor target) network uses 3 fully-connected layers and 2 batch normalization layers:
 
-- batch_norm -> state_size
-- state_size -> 128 -> ReLU
-- batch_norm -> 128
-- 128 -> 128 -> ReLU
-- batch_norm -> 128
+- state_size -> 128 -> batch_norm -> ReLU
+- 128 -> 128 -> batch_norm -> ReLU
 - 128 -> action_size -> tanh
 
 The critic (and the critic target) network uses 3 fully-connected layers and 1 batch normalization layer:
 
--   state_size -> 128 -> ReLU
--   batch_norm -> 128
+-   state_size -> 128 -> batch_norm -> ReLU
 -   128 + action_size -> 128 -> ReLU
 -   128 -> 1
 
@@ -40,11 +36,11 @@ A convolutional net is not used as the agent does not learn directly from the pi
 
 ## Performance
 
-The agent solved the environment (by reaching an average reward of 0.5 over 100 episodes) in  **???**  episodes, before the 2000 episode limit.
+The agent solved the environment (by reaching an average reward of 0.5 over 100 episodes) in  **1510**  episodes, before the 2000 episode limit.
 
 ### Reward vs. Episode
 
-[![reward](https://user-images.githubusercontent.com/39870221/85939819-6aae0600-b8e6-11ea-9748-cbffbd4b62aa.png)](https://user-images.githubusercontent.com/39870221/85939819-6aae0600-b8e6-11ea-9748-cbffbd4b62aa.png)
+![reward](https://user-images.githubusercontent.com/39870221/86493216-a01b7f00-bd3e-11ea-8ebe-ef9133c5c341.png)
 
 ## Improvements
 - Using prioritized experience replay and/or shared experience replay
