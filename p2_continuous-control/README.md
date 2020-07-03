@@ -53,12 +53,12 @@ The environment is based on [Unity ML-agents](https://github.com/Unity-Technolog
 3. Place the file in the DRLND GitHub repository, in the `p2_continuous-control/` folder, and unzip (or decompress) the file. 
 
 ### Explanation
-My solution for this environment uses the actor-critic DDPG algorithm with fixed targets (for both actor and critic), soft updates, experienced replay, and added Ornstein–Uhlenbeck noise. The agent is created with four internal networks: a Q network, a deterministic policy network, a target Q network, and a target policy network.
+My solution for this environment uses the actor-critic DDPG algorithm with fixed targets (for both actor and critic), soft updates, experienced replay, and added Ornstein–Uhlenbeck noise. The agents are each created with four internal networks: a Q network, a deterministic policy network, a target Q network, and a target policy network.
 
 The Q network and the target Q network have identical architectures: 3 fully-connected layers joined by ReLU activation functions. The final output is entered into a tanh activation function.
 
 The policy network and target policy network also have identical architectures: 3 fully-connected layers joined by ReLU activation functions.
 
-The agent uses a discount rate of 0.99.
+The agents each use a discount rate of 0.99.
 
-The agent is trained in a training loop for either 1000 episodes (with a max of 1000 timesteps each) or when it reaches an average reward over 100 episodes of 30.0 or greater.
+The agents are each trained in a training loop for either 1000 episodes (with a max of 1000 timesteps each) or when they collectively reach an average reward over 100 episodes of 30.0 or greater.
