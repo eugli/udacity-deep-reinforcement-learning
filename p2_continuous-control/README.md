@@ -31,7 +31,8 @@ The environment is based on [Unity ML-agents](https://github.com/Unity-Technolog
 
 #### 1: Clone the DRLND Repository
 1.  Clone [the DRLND GitHub repository](https://github.com/udacity/deep-reinforcement-learning#dependencies) from Udacity.
-2. Follow the instructions in the README to configure the necessary dependencies--Python, PyTorch, Numpy, ML-Agents, etc.
+2. Create and activate a new conda environment with Python 3.6.
+3. Download the necessary dependencies (PyTorch, Numpy, ML-Agents, etc.) from the DRLND repository from the `deep-reinforcement-learning/python` folder with `pip install .`.
 
 #### 2: Download the Unity Environment
 1. Download the environment from one of the links below. You need only select the environment that matches your operating system:

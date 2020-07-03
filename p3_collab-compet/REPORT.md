@@ -2,7 +2,11 @@
 
 ## Algorithm
 
-The algorithm used for this environment is [MADDPG](https://arxiv.org/pdf/1706.02275.pdf). This implementation also employs fixed targets (with soft updates) and experienced replay that helps the agent generalize and train with reduced noise. To encourage exploration, the [Ornstein -Uhlenbeck process](https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process) is used to add a little bit of noise to the actions. 
+The algorithm used for this environment is [MADDPG](https://arxiv.org/pdf/1706.02275.pdf). MADDPG involves agents that each have an actor network and a critic network. Each agent is independent of the other, but they must learn how the actions of the other agents can potentially affect the environment in order to maximize expected reward. The actor network takes in the current state and outputs an action set for that state. The critic takes in the current state and the action set from the actor and returns the estimated Q-value of the state-action pair. This estimate is then used by the actor network to evaluate its choice of action.
+
+This implementation also employs fixed targets (with soft updates) and experienced replay that helps the agent generalize and train with reduced noise. The fixed targets are stored in two more networks in the agent: a target actor network and target critic network that have identical architectures to the original actor network and target network.
+
+To encourage exploration, the [Ornstein -Uhlenbeck process](https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process) is used to add a little bit of noise to the actions.
 
 |Name|Value|
 |---|---:|
