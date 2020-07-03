@@ -1,4 +1,5 @@
 
+
 # Continuous Control
 
 ### Introduction
@@ -38,10 +39,10 @@ The environment is based on [Unity ML-agents](https://github.com/Unity-Technolog
 ### Explanation
 My solution for this environment uses the actor-critic DDPG algorithm with fixed targets (for both actor and critic), soft updates, experienced replay, and added Ornstein–Uhlenbeck noise. The agent is created with four internal networks: a Q network, a deterministic policy network, a target Q network, and a target policy network.
 
-The Q network and the target Q network have identical architectures: 3 fully-connected layers joined by ReLU activation functions. The final output is then entered into a tanh activation function.
+The Q network and the target Q network have identical architectures: 3 fully-connected layers joined by ReLU activation functions and batch normalization layers. The final output is entered into a tanh activation function.
 
-The policy network and policy network also have identical architectures: 3 fully-connected layers joined by ReLU activation functions.
+The policy network and target policy network also have identical architectures: 3 fully-connected layers joined by ReLU activation functions with a batch normalization layer before the 2nd fully-connected layer.
 
 The agent uses a discount rate of 0.99.
 
-The agent is trained in a training loop for either 1000 episodes (with a max of 5000 timesteps each) or when it reaches an average reward over 100 episodes of 30.0 or greater.
+The agent is trained in a training loop for either 500 episodes (with a max of 10000 timesteps each) or when it reaches an average reward over 100 episodes of 30.0 or greater.

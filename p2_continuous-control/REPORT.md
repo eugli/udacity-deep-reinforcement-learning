@@ -17,17 +17,23 @@ The algorithm used for this environment is  [DDPG](https://arxiv.org/pdf/1509.02
 
 #### Model Architecture
 
-The actor (and the actor target) network uses 3 fully-connected layers:
+The actor (and the actor target) network uses 3 fully-connected layers and 3 batch normalization layers:
+
+- batch_norm -> state_size
+- state_size -> 128 -> ReLU
+- batch_norm -> 128
+- 128 -> 128 -> ReLU
+- batch_norm -> 128
+- 128 -> action_size -> tanh
+
+The critic (and the critic target) network uses 3 fully-connected layers and 1 batch normalization layer:
 
 -   state_size -> 128 -> ReLU
--   128 -> 128 -> ReLU
--   128 -> action_size -> tanh
-
-The critic (and the critic target) network uses 3 fully-connected layers:
-
--   state_size -> 128 -> ReLU
+-   batch_norm -> 128
 -   128 + action_size -> 128 -> ReLU
 -   128 -> 1
+
+The batch normalization layers helps restandardize the input into each fully-connected layer, reducing the internal covariate shift between layers and thus improving training speed.
 
 A convolutional net is not used as the agent does not learn directly from the pixels of the environment but a prepared vector of relevant information.
 
