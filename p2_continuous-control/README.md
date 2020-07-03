@@ -19,7 +19,7 @@ The observation space consists of 33 variables corresponding to position, rotati
 For this project, we will provide you with two separate versions of the Unity environment:
 
 - The first version contains a single agent.
-- The second version contains 20 identical agents, each with its own copy of the environment. <--- (the version I selected)
+- The second version contains 20 identical agents, each with its own copy of the environment. <-- (the version I selected)
 
 The second version is useful for algorithms like PPO, A3C, and D4PG that use multiple (non-interacting, parallel) copies of the same agent to distribute the task of gathering experience.
 
