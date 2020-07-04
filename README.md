@@ -7,4 +7,4 @@ This repo documents my completion of Udacity's 4-month-long [Deep Reinforcement 
 You can view the syllabus [here.](syllabus.pdf)
 
 ## Certificate
-Coming soon!
+![Certificate](certification.jpg)
